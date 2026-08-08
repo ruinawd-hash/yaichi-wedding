@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>八一Wedding｜藤沢の古民家ウエディング</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&amp;family=Shippori+Mincho:wght@400;600&amp;family=Noto+Sans+JP:wght@300;400&amp;display=swap" rel="stylesheet"/>
+<style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --wood:  #8B6F52;
+      --paper: #F7F3EE;
+      --ink:   #2A2420;
+      --moss:  #5C6B4A;
+      --gold:  #C4813A;
+      --light: #EDE8E1;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--paper); color: var(--ink); font-family: 'Noto Sans JP', sans-serif; font-weight: 300; line-height: 1.9; font-size: 15px; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 18px 40px; background: rgba(247,243,238,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid rgba(139,111,82,0.2); }
+    .nav-logo { font-family: 'Shippori Mincho', serif; font-size: 17px; letter-spacing: 0.12em; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; list-style: none; flex-wrap: wrap; }
+    .nav-links a { font-size: 11px; letter-spacing: 0.12em; color: var(--wood); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--gold); }
+
+    /* HERO */
+    .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: center; text-align: center; padding: 130px 24px 60px; position: relative; overflow: hidden; }
+    .hero-photo { position: absolute; inset: 0; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; image-rendering: -webkit-optimize-contrast; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(42,36,32,0.12) 0%, rgba(42,36,32,0.04) 45%, rgba(42,36,32,0.42) 100%); }
+    .hero-content { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+    .hero-eyebrow { font-size: 11px; letter-spacing: 0.35em; color: rgba(255,255,255,0.8); }
+    .hero-title { font-family: 'Noto Serif JP', serif; font-weight: 300; font-size: clamp(42px, 8vw, 80px); color: #fff; letter-spacing: 0.18em; line-height: 1.3; }
+    .hero-sub { font-family: 'Shippori Mincho', serif; font-size: clamp(13px, 1.8vw, 16px); color: rgba(255,255,255,0.82); letter-spacing: 0.18em; line-height: 1.9; }
+    .hero-rule { width: 48px; height: 1px; background: rgba(255,255,255,0.5); }
+    .hero-desc { font-size: 13px; color: rgba(255,255,255,0.75); letter-spacing: 0.12em; line-height: 2; }
+    .btn-primary { margin-top: 12px; display: inline-block; padding: 14px 40px; border: 1px solid rgba(255,255,255,0.7); color: #fff; font-size: 12px; letter-spacing: 0.25em; text-decoration: none; transition: background 0.3s; }
+    .btn-primary:hover { background: rgba(255,255,255,0.15); }
+
+    /* SECTION COMMON */
+    section { padding: 100px 24px; }
+    .inner { max-width: 900px; margin: 0 auto; }
+    .inner-wide { max-width: 1100px; margin: 0 auto; }
+    .section-label { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; }
+    .section-label-text { font-size: 10px; letter-spacing: 0.4em; color: var(--wood); white-space: nowrap; }
+    .section-label-line { flex: 1; height: 1px; background: var(--wood); opacity: 0.3; }
+    .section-title { font-family: 'Noto Serif JP', serif; font-weight: 300; font-size: clamp(26px, 4vw, 38px); letter-spacing: 0.12em; line-height: 1.5; margin-bottom: 24px; }
+    .section-body { font-size: 14px; line-height: 2.2; color: #4A3F38; letter-spacing: 0.05em; }
+
+    /* CONCEPT */
+    #concept { background: var(--paper); }
+    .concept-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .concept-photo-wrap { aspect-ratio: 4/5; overflow: hidden; }
+    .concept-photo-wrap img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* VENUE */
+    #venue { background: #F0EBE3; }
+    .venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .venue-photo-stack { display: flex; flex-direction: column; gap: 3px; }
+    .venue-photo-a { aspect-ratio: 16/9; overflow: hidden; }
+    .venue-photo-a img { width: 100%; height: 100%; object-fit: cover; }
+    .venue-photo-b { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .venue-photo-b-item { aspect-ratio: 1; overflow: hidden; }
+    .venue-photo-b-item img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* CUISINE */
+    #cuisine { background: var(--paper); }
+    .cuisine-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .cuisine-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .cuisine-photo { aspect-ratio: 3/4; overflow: hidden; }
+    .cuisine-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* PHOTO SECTION */
+    #photo { background: #F0EBE3; }
+    .photo-section-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .photo-section-images { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+    .photo-section-img { aspect-ratio: 3/4; overflow: hidden; }
+    .photo-section-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .photo-section-img:hover img { transform: scale(1.04); }
+    .photo-section-img.wide { grid-column: 1/3; aspect-ratio: 16/9; }
+
+    /* CEREMONY */
+    #shrines { background: var(--paper); }
+    .shrine-ceremony-photo { width: 100%; aspect-ratio: 3/2; overflow: hidden; margin-bottom: 48px; }
+    .shrine-ceremony-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; }
+    .shrine-list { border-top: 1px solid rgba(139,111,82,0.2); margin-top: 40px; }
+    .shrine-item { display: flex; gap: 24px; align-items: flex-start; padding: 28px 0; border-bottom: 1px solid rgba(139,111,82,0.2); }
+    .shrine-mark { width: 32px; flex-shrink: 0; font-family: 'Shippori Mincho', serif; font-size: 13px; color: var(--gold); padding-top: 4px; letter-spacing: 0.05em; }
+    .shrine-name { font-family: 'Shippori Mincho', serif; font-size: 16px; letter-spacing: 0.08em; color: var(--ink); margin-bottom: 4px; }
+    .shrine-note { font-size: 12.5px; color: #6A5E56; line-height: 1.8; }
+
+    /* VOICE (お客様の声) */
+    #voice { background: #F0EBE3; }
+    .voice-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 48px; }
+    .voice-card { background: var(--paper); padding: 32px 28px; border-left: 3px solid var(--gold); }
+    .voice-text { font-size: 14px; line-height: 2.1; color: #4A3F38; font-style: italic; margin-bottom: 20px; }
+    .voice-text::before { content: '「'; color: var(--gold); font-size: 18px; }
+    .voice-text::after { content: '」'; color: var(--gold); font-size: 18px; }
+    .voice-name { font-size: 11px; letter-spacing: 0.2em; color: var(--wood); }
+
+    /* CONTACT CTA */
+    #contact { background: #EAE8E0; text-align: center; padding: 100px 24px; border-top: 1px solid rgba(139,111,82,0.15); }
+    #contact .section-label-text { color: var(--wood); }
+    #contact .section-label-line { background: var(--wood); opacity: 0.3; }
+    .cta-title { font-family: 'Noto Serif JP', serif; font-weight: 300; font-size: clamp(24px, 4vw, 36px); letter-spacing: 0.14em; margin-bottom: 20px; color: var(--ink); }
+    .cta-sub { font-size: 13px; color: #5A4E46; letter-spacing: 0.1em; line-height: 2; margin-bottom: 48px; }
+    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .btn-line { display: inline-block; padding: 16px 56px; background: #06C755; color: #fff; font-size: 13px; letter-spacing: 0.2em; font-weight: 400; text-decoration: none; transition: background 0.3s, transform 0.2s; border-radius: 2px; }
+    .btn-line:hover { background: #05a847; transform: translateY(-1px); }
+
+    /* PLANS */
+    #plans { background: var(--paper); }
+    .plan-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; margin-top: 48px; }
+    .plan-card { background: #F0EBE3; padding: 40px 28px; border-top: 2px solid var(--gold); position: relative; }
+    .plan-num { font-size: 10px; letter-spacing: 0.3em; color: var(--gold); margin-bottom: 16px; }
+    .plan-name { font-family: 'Shippori Mincho', serif; font-size: 18px; letter-spacing: 0.1em; color: var(--ink); margin-bottom: 14px; line-height: 1.6; }
+    .plan-price { font-family: 'Noto Serif JP', serif; font-weight: 400; font-size: 26px; color: var(--gold); margin-bottom: 18px; letter-spacing: 0.02em; }
+    .plan-price span { font-size: 13px; margin-left: 2px; color: #8B6F52; }
+    .plan-desc { font-size: 12.5px; line-height: 2; color: #5A4E46; }
+    .plan-includes { margin-top: 16px; padding-top: 16px; border-top: 1px solid rgba(139,111,82,0.2); }
+    .plan-includes-title { font-size: 10px; letter-spacing: 0.2em; color: var(--wood); margin-bottom: 8px; }
+    .plan-includes-list { list-style: none; }
+    .plan-includes-list li { font-size: 11.5px; color: #5A4E46; line-height: 1.9; padding-left: 12px; position: relative; }
+    .plan-includes-list li::before { content: '・'; position: absolute; left: 0; color: var(--gold); }
+    .plan-note { margin-top: 32px; font-size: 12px; line-height: 2.1; color: #6A5E56; letter-spacing: 0.03em; }
+    .plan-card--recommend { border-top: 3px solid var(--moss); background: var(--paper); box-shadow: 0 8px 28px rgba(92,107,74,0.18); transform: scale(1.02); z-index: 2; }
+    .recommend-badge { position: absolute; top: -1px; left: 50%; transform: translate(-50%, -50%); background: var(--moss); color: #fff; font-size: 11px; letter-spacing: 0.25em; padding: 7px 22px; white-space: nowrap; font-family: 'Shippori Mincho', serif; box-shadow: 0 3px 10px rgba(0,0,0,0.18); }
+    .recommend-badge::before { content: ''; position: absolute; top: 100%; left: 0; border-style: solid; border-width: 5px 0 0 6px; border-color: #41502f transparent transparent transparent; }
+    .recommend-badge::after { content: ''; position: absolute; top: 100%; right: 0; border-style: solid; border-width: 5px 6px 0 0; border-color: #41502f transparent transparent transparent; }
+
+    /* FLOW / SCHEDULE */
+    #flow { background: #F0EBE3; }
+    .flow-steps { display: flex; flex-direction: column; margin-top: 40px; }
+    .flow-step { display: flex; gap: 32px; padding: 32px 0; border-bottom: 1px solid rgba(139,111,82,0.15); }
+    .flow-step:first-child { border-top: 1px solid rgba(139,111,82,0.15); }
+    .flow-idx { font-family: 'Shippori Mincho', serif; font-size: 28px; color: var(--gold); opacity: 0.7; line-height: 1; flex-shrink: 0; width: 40px; padding-top: 4px; }
+    .flow-step-title { font-family: 'Shippori Mincho', serif; font-size: 16px; margin-bottom: 6px; }
+    .flow-step-text { font-size: 13px; color: #5A4E46; line-height: 1.9; }
+
+    /* SCHEDULE (당일 스케줄) */
+    #schedule { background: var(--paper); }
+    .schedule-list { margin-top: 40px; border-top: 1px solid rgba(139,111,82,0.2); }
+    .schedule-item { display: flex; gap: 24px; align-items: flex-start; padding: 24px 0; border-bottom: 1px solid rgba(139,111,82,0.2); }
+    .schedule-time { font-family: 'Shippori Mincho', serif; font-size: 14px; color: var(--gold); flex-shrink: 0; width: 70px; padding-top: 2px; letter-spacing: 0.05em; }
+    .schedule-content-title { font-family: 'Shippori Mincho', serif; font-size: 15px; color: var(--ink); margin-bottom: 4px; }
+    .schedule-content-text { font-size: 12.5px; color: #6A5E56; line-height: 1.8; }
+
+    /* SNS */
+    #sns { background: #F0EBE3; text-align: center; }
+    .sns-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px; }
+    .sns-btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 36px; border: 1px solid var(--ink); color: var(--ink); font-size: 12px; letter-spacing: 0.2em; text-decoration: none; transition: background 0.3s, color 0.3s; font-family: 'Noto Sans JP', sans-serif; }
+    .sns-btn:hover { background: var(--ink); color: var(--paper); }
+    .sns-btn-icon { font-size: 16px; }
+
+    /* FAQ */
+    #faq { background: var(--paper); }
+    .faq-list { margin-top: 40px; }
+    .faq-item { border-bottom: 1px solid rgba(139,111,82,0.2); }
+    .faq-item:first-child { border-top: 1px solid rgba(139,111,82,0.2); }
+    .faq-question { display: flex; gap: 16px; align-items: flex-start; padding: 24px 0; cursor: pointer; }
+    .faq-q-mark { font-family: 'Shippori Mincho', serif; font-size: 18px; color: var(--gold); flex-shrink: 0; line-height: 1.4; }
+    .faq-q-text { font-size: 14px; letter-spacing: 0.05em; color: var(--ink); line-height: 1.7; flex: 1; padding-top: 2px; }
+    .faq-arrow { flex-shrink: 0; color: var(--wood); font-size: 12px; transition: transform 0.3s; padding-top: 4px; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-answer { display: none; padding: 0 0 24px 38px; }
+    .faq-item.open .faq-answer { display: block; }
+    .faq-a-text { font-size: 13px; color: #5A4E46; line-height: 2; }
+    .faq-category {
+      font-family: 'Shippori Mincho', serif;
+      font-size: 14px; letter-spacing: 0.15em;
+      color: var(--wood);
+      margin: 48px 0 0;
+      padding: 10px 0 10px 14px;
+      border-left: 3px solid var(--gold);
+    }
+    .faq-category:first-of-type { margin-top: 40px; }
+
+    /* ACCESS */
+    #access { background: var(--ink); color: var(--paper); padding: 60px 24px 100px; }
+    #access .section-label-text { color: rgba(247,243,238,0.5); }
+    #access .section-label-line { background: rgba(247,243,238,0.2); }
+    #access .section-title { color: var(--paper); }
+    .access-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; }
+    .access-map { aspect-ratio: 1; overflow: hidden; }
+    .access-map iframe { width: 100%; height: 100%; border: none; }
+    .access-name { font-family: 'Noto Serif JP', serif; font-weight: 300; font-size: 22px; letter-spacing: 0.12em; margin-bottom: 8px; }
+    .access-venue-sub { font-size: 12px; letter-spacing: 0.2em; color: var(--gold); margin-bottom: 32px; }
+    .access-detail { font-size: 13.5px; line-height: 2.4; color: rgba(247,243,238,0.75); }
+    .access-detail strong { color: var(--paper); font-weight: 400; }
+
+    /* FOOTER */
+    footer { background: var(--ink); color: rgba(247,243,238,0.45); text-align: center; padding: 40px 24px; font-size: 11px; letter-spacing: 0.15em; line-height: 2.6; border-top: 1px solid rgba(247,243,238,0.1); }
+    footer strong { color: rgba(247,243,238,0.7); font-weight: 400; }
+
+    /* FADE IN */
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* MOBILE */
+    @media (max-width: 700px) {
+      nav { padding: 14px 16px; }
+      .nav-links { gap: 10px; }
+      .nav-links a { font-size: 10px; }
+      section { padding: 70px 20px; }
+      .concept-grid, .venue-grid, .cuisine-inner, .photo-section-grid, .access-grid { grid-template-columns: 1fr; gap: 32px; }
+      .plan-cards { grid-template-columns: 1fr; }
+      .plan-card--recommend { transform: none; margin: 10px 0; }
+      .cta-buttons { flex-direction: column; align-items: center; }
+      .voice-cards { grid-template-columns: 1fr; }
+      .sns-buttons { flex-direction: column; align-items: center; }
+    }
+  
+
+    /* RESPONSIVE TYPOGRAPHY / LAYOUT REFINEMENTS */
+    html, body { max-width: 100%; overflow-x: hidden; }
+    img, iframe { max-width: 100%; }
+    .inner, .inner-wide,
+    .concept-grid > *, .venue-grid > *, .cuisine-inner > *,
+    .photo-section-grid > *, .access-grid > * { min-width: 0; }
+
+    /* Prevent the photo wedding grid from extending beyond the content width */
+    #photo .inner-wide,
+    .photo-section-grid,
+    .photo-section-images,
+    .photo-section-img { width: 100%; max-width: 100%; min-width: 0; }
+    .photo-section-img img { display: block; max-width: 100%; }
+
+    /* Japanese text wraps more naturally on both desktop and mobile */
+    .section-title, .section-body, .cta-title, .cta-sub,
+    .flow-step-title, .flow-step-text, .schedule-content-title,
+    .schedule-content-text, .faq-q-text, .faq-a-text,
+    .plan-name, .plan-desc, .voice-text, .shrine-note, .access-detail {
+      line-break: strict;
+      word-break: normal;
+      overflow-wrap: break-word;
+    }
+    .section-body { max-width: 46em; }
+    .schedule-title { margin-top: 72px; }
+
+    @media (max-width: 700px) {
+      body { font-size: 14px; line-height: 1.85; }
+      nav { align-items: center; gap: 12px; overflow: hidden; }
+      .nav-logo { flex-shrink: 0; font-size: 15px; }
+      .nav-links {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 2px;
+      }
+      .nav-links::-webkit-scrollbar { display: none; }
+      .nav-links li { flex-shrink: 0; }
+
+      .hero { min-height: 100svh; padding: 112px 20px 48px; }
+      .hero-content { width: min(100%, 520px); gap: 14px; }
+      .hero-title { font-size: clamp(34px, 11vw, 52px); letter-spacing: 0.12em; }
+      .hero-sub { font-size: 13px; letter-spacing: 0.10em; line-height: 1.8; }
+      .hero-desc { font-size: 12px; letter-spacing: 0.06em; line-height: 1.9; }
+
+      section { padding: 72px 20px; }
+      .inner, .inner-wide { width: 100%; }
+      .section-label { gap: 12px; margin-bottom: 34px; }
+      .section-label-text { font-size: 9px; letter-spacing: 0.28em; }
+      .section-title,
+      .schedule-title {
+        font-size: clamp(23px, 7vw, 30px);
+        letter-spacing: 0.07em;
+        line-height: 1.55;
+        margin-bottom: 20px;
+      }
+      .section-body { font-size: 13.5px; line-height: 2; letter-spacing: 0.025em; max-width: none; }
+      .concept-grid, .venue-grid, .cuisine-inner, .photo-section-grid, .access-grid { gap: 34px; }
+
+      .photo-section-images { grid-template-columns: 1fr 1fr; gap: 3px; overflow: hidden; }
+      .photo-section-img { min-width: 0; }
+      .photo-section-img img { width: 100%; height: 100%; object-fit: cover; }
+
+      .shrine-ceremony-photo { aspect-ratio: 4 / 5; margin-bottom: 36px; }
+      .shrine-ceremony-photo img { object-position: center center; }
+
+      .flow-step { gap: 20px; padding: 26px 0; }
+      .flow-idx { width: 28px; font-size: 24px; }
+      .flow-step-title { font-size: 15px; line-height: 1.65; }
+      .flow-step-text { font-size: 12.5px; line-height: 1.9; }
+      .schedule-title { margin-top: 58px; }
+      .schedule-item { gap: 14px; padding: 22px 0; }
+      .schedule-time { width: 58px; font-size: 13px; }
+
+      .faq-question { gap: 12px; padding: 22px 0; }
+      .faq-q-text { font-size: 13.5px; line-height: 1.75; letter-spacing: 0.02em; }
+      .faq-answer { padding: 0 0 22px 30px; }
+      .faq-a-text { font-size: 12.5px; line-height: 1.95; }
+
+      .cta-title { font-size: clamp(22px, 7vw, 29px); letter-spacing: 0.08em; line-height: 1.55; }
+      .cta-sub { font-size: 12.5px; letter-spacing: 0.04em; line-height: 1.95; }
+      .btn-line, .sns-btn { width: min(100%, 340px); justify-content: center; }
+    }
+
+    @media (max-width: 390px) {
+      section { padding-left: 18px; padding-right: 18px; }
+      .hero { padding-left: 18px; padding-right: 18px; }
+      .hero-title { letter-spacing: 0.08em; }
+      .section-title, .schedule-title { font-size: 22px; letter-spacing: 0.045em; }
+      .photo-section-images { grid-template-columns: 1fr; }
+      .photo-section-img.wide { grid-column: 1; aspect-ratio: 4 / 3; }
+      .photo-section-img { aspect-ratio: 4 / 5; }
+    }
+
+    /* PHOTO LAYOUT — user-selected images */
+    .concept-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+    .concept-gallery-item {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+    }
+    .concept-gallery-item img,
+    .ceremony-gallery-item img,
+    #photo .gallery-item img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    #photo .gallery-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin-top: 48px;
+      width: 100%;
+    }
+    #photo .gallery-item {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      min-width: 0;
+    }
+    #photo .gallery-item.photo-wide {
+      grid-column: 1 / 3;
+      aspect-ratio: 16 / 9;
+    }
+
+    .ceremony-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+      margin-bottom: 48px;
+    }
+    .ceremony-gallery-item {
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+    }
+    .ceremony-gallery-item.ceremony-wide {
+      grid-column: 1 / 3;
+      aspect-ratio: 16 / 9;
+    }
+
+    @media (max-width: 700px) {
+      .concept-gallery { grid-template-columns: 1fr 1fr; }
+      .concept-gallery-item { aspect-ratio: 3 / 4; }
+      #photo .gallery-grid { margin-top: 34px; }
+      .ceremony-gallery { margin-bottom: 36px; }
+    }
+
+    @media (max-width: 390px) {
+      .concept-gallery { grid-template-columns: 1fr; }
+      .concept-gallery-item { aspect-ratio: 4 / 5; }
+      #photo .gallery-grid { grid-template-columns: 1fr; }
+      #photo .gallery-item.photo-wide {
+        grid-column: 1;
+        aspect-ratio: 4 / 3;
+      }
+      .ceremony-gallery { grid-template-columns: 1fr; }
+      .ceremony-gallery-item.ceremony-wide {
+        grid-column: 1;
+        aspect-ratio: 4 / 3;
+      }
+    }
+
+/* Ceremony image + explanation pairing */
+.shrine-item {
+  display: grid;
+  grid-template-columns: minmax(220px, 38%) 1fr;
+  gap: 28px;
+  align-items: center;
+}
+.shrine-item-photo {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #ebe6df;
+}
+.shrine-item-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile: show the whole photograph without cropping */
+@media (max-width: 700px) {
+  .hero-photo {
+    background: #2a2420;
+  }
+  .hero-photo img {
+    object-fit: contain;
+    object-position: center center;
+  }
+
+  .concept-gallery-item,
+  .venue-photo-a,
+  .venue-photo-b-item,
+  .cuisine-photo,
+  #photo .gallery-item,
+  #photo .gallery-item.photo-wide,
+  .shrine-item-photo {
+    aspect-ratio: auto !important;
+    overflow: visible;
+    background: transparent;
+  }
+
+  .concept-gallery-item img,
+  .venue-photo-a img,
+  .venue-photo-b-item img,
+  .cuisine-photo img,
+  #photo .gallery-item img,
+  .shrine-item-photo img {
+    width: 100%;
+    height: auto !important;
+    max-height: none;
+    object-fit: contain !important;
+    object-position: center center;
+  }
+
+  .shrine-item {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 28px 0;
+  }
+}
+
+/* Revision: mobile hero text below image */
+@media (max-width: 700px) {
+  .hero {
+    min-height: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    background: #171412;
+  }
+  .hero-photo {
+    position: relative !important;
+    inset: auto !important;
+    width: 100%;
+    height: auto;
+    background: #171412;
+  }
+  .hero-photo img {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+  .hero-overlay { display: none !important; }
+  .hero-content-below-mobile {
+    position: relative !important;
+    width: 100%;
+    padding: 30px 20px 42px;
+    background: #171412;
+  }
+}
+
+/* Revision: VENUE four-photo layout */
+.venue-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-top: 48px;
+}
+.venue-gallery-item {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.venue-gallery-item.venue-wide {
+  grid-column: 1 / 3;
+  aspect-ratio: 16 / 9;
+}
+.venue-gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 700px) {
+  .venue-gallery {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 34px;
+  }
+  .venue-gallery-item,
+  .venue-gallery-item.venue-wide {
+    grid-column: 1;
+    aspect-ratio: auto;
+    overflow: visible;
+  }
+  .venue-gallery-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+/* Latest hero revision: full-screen photo with overlaid heading */
+.hero {
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+  padding: 110px 24px 52px !important;
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  background: #171412;
+}
+.hero-photo {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100%;
+  height: 100%;
+}
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+.hero-overlay {
+  display: block !important;
+  background: linear-gradient(
+    to bottom,
+    rgba(24,20,18,0.14) 0%,
+    rgba(24,20,18,0.05) 42%,
+    rgba(24,20,18,0.48) 100%
+  ) !important;
+}
+.hero-content {
+  position: relative !important;
+  z-index: 2;
+  width: min(100%, 680px);
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 100svh !important;
+    padding: 94px 18px 42px !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+  }
+  .hero-photo {
+    position: absolute !important;
+    inset: 0 !important;
+    height: 100% !important;
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: 50% 50% !important;
+  }
+  .hero-content {
+    position: relative !important;
+    width: 100%;
+    padding: 0 !important;
+    background: transparent !important;
+  }
+}
+</style>
+<style>
+/* Mobile-only Japanese line-break tuning */
+.sp-only { display: none; }
+@media (max-width: 700px) {
+  .sp-only { display: block; }
+  .section-title, .cta-title {
+    line-height: 1.65;
+    letter-spacing: 0.08em;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+  .section-body, .cta-sub, .plan-desc, .flow-step-text,
+  .schedule-content-text, .shrine-note, .voice-text,
+  .faq-a-text, .plan-note {
+    line-height: 2.05;
+    letter-spacing: 0.025em;
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
+}
+
+/* =========================================================
+   FINAL PHOTO LAYOUT ADJUSTMENTS
+   ========================================================= */
+
+/* TOP:
+   Keep all six people visible on a vertical phone screen.
+   A blurred background fills the viewport, while the original
+   photograph is shown in full in the foreground. */
+.hero {
+  min-height: 100vh !important;
+  min-height: 100svh !important;
+  position: relative;
+  overflow: hidden;
+  background: #171412;
+}
+.hero-photo {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #171412;
+}
+.hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: -28px;
+  background: url("images/111.jpg") center center / cover no-repeat;
+  filter: blur(18px);
+  transform: scale(1.08);
+  opacity: 0.72;
+}
+.hero-photo img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+.hero-overlay {
+  display: block !important;
+  z-index: 1;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(20,17,15,0.10) 0%,
+      rgba(20,17,15,0.04) 42%,
+      rgba(20,17,15,0.58) 100%
+    ) !important;
+}
+.hero-content {
+  position: relative !important;
+  z-index: 2;
+  background: transparent !important;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 100svh !important;
+    padding: 92px 18px 42px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+  .hero-photo {
+    position: absolute !important;
+    inset: 0 !important;
+    height: 100% !important;
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+  .hero-content {
+    width: 100%;
+    padding: 0 !important;
+  }
+}
+
+/* VENUE: wide / portrait + portrait / wide */
+.venue-gallery {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3px !important;
+  width: 100%;
+  margin-top: 48px;
+}
+.venue-gallery-item {
+  overflow: hidden;
+  min-width: 0;
+}
+.venue-gallery-item.venue-wide {
+  grid-column: 1 / 3;
+  aspect-ratio: 16 / 9;
+}
+.venue-gallery-item.venue-portrait {
+  aspect-ratio: 3 / 4;
+}
+.venue-gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center;
+}
+
+/* CUISINE:
+   187 wide, 177 + 291 matching portrait crops, 183 wide. */
+#cuisine .cuisine-photos {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3px !important;
+}
+#cuisine .cuisine-photo:nth-child(1),
+#cuisine .cuisine-photo:nth-child(4) {
+  grid-column: 1 / 3 !important;
+}
+#cuisine .cuisine-photo:nth-child(1) {
+  aspect-ratio: 4 / 3 !important;
+}
+#cuisine .cuisine-photo:nth-child(2),
+#cuisine .cuisine-photo:nth-child(3) {
+  grid-column: auto !important;
+  aspect-ratio: 3 / 4 !important;
+  overflow: hidden !important;
+}
+#cuisine .cuisine-photo:nth-child(4) {
+  aspect-ratio: 16 / 9 !important;
+}
+#cuisine .cuisine-photo img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center;
+}
+/* Keep the cook's hands and ingredients visible. */
+#cuisine .cuisine-photo:nth-child(2) img {
+  object-position: 52% 45%;
+}
+
+/* PHOTO WEDDING:
+   keep the two portrait photographs side by side and crop
+   both to the same height. */
+#photo .gallery-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3px !important;
+}
+#photo .gallery-item {
+  min-width: 0;
+  overflow: hidden !important;
+}
+#photo .gallery-item:not(.photo-wide) {
+  aspect-ratio: 3 / 4 !important;
+}
+#photo .gallery-item.photo-wide {
+  grid-column: 1 / 3 !important;
+  aspect-ratio: 16 / 9 !important;
+}
+#photo .gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center;
+}
+
+@media (max-width: 700px) {
+  /* Preserve the intended two-column portrait pairs on phones. */
+  .venue-gallery,
+  #cuisine .cuisine-photos,
+  #photo .gallery-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 3px !important;
+  }
+
+  .venue-gallery-item.venue-wide,
+  #cuisine .cuisine-photo:nth-child(1),
+  #cuisine .cuisine-photo:nth-child(4),
+  #photo .gallery-item.photo-wide {
+    grid-column: 1 / 3 !important;
+  }
+
+  .venue-gallery-item.venue-wide {
+    aspect-ratio: 16 / 9 !important;
+  }
+  .venue-gallery-item.venue-portrait,
+  #cuisine .cuisine-photo:nth-child(2),
+  #cuisine .cuisine-photo:nth-child(3),
+  #photo .gallery-item:not(.photo-wide) {
+    aspect-ratio: 3 / 4 !important;
+    overflow: hidden !important;
+  }
+
+  .venue-gallery-item img,
+  #cuisine .cuisine-photo img,
+  #photo .gallery-item img {
+    width: 100%;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+}
+</style><style>
+/* =========================================================
+   MOBILE-FIRST FINAL OVERRIDES
+   Smartphone display takes priority.
+   ========================================================= */
+
+@media (max-width: 700px) {
+  /* TOP: portrait, full-screen, six people visible */
+  .hero {
+    min-height: 100svh !important;
+    height: 100svh !important;
+    padding: 88px 16px 34px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    overflow: hidden !important;
+    background: #171412 !important;
+  }
+  .hero-photo,
+  .hero-photo picture {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+  }
+  .hero-photo::before {
+    display: none !important;
+  }
+  .hero-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+  .hero-overlay {
+    display: block !important;
+    background: linear-gradient(
+      to bottom,
+      rgba(18,15,13,0.06) 0%,
+      rgba(18,15,13,0.03) 45%,
+      rgba(18,15,13,0.62) 100%
+    ) !important;
+  }
+  .hero-content {
+    position: relative !important;
+    z-index: 3 !important;
+    width: 100% !important;
+    padding: 0 6px 8px !important;
+    background: transparent !important;
+  }
+
+  /* VENUE: wide / portrait + portrait / wide */
+  #venue .venue-gallery {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 4px !important;
+    width: 100% !important;
+  }
+  #venue .venue-gallery-item {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #venue .venue-gallery-item.venue-wide {
+    grid-column: 1 / -1 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+  #venue .venue-gallery-item.venue-portrait {
+    grid-column: auto !important;
+    aspect-ratio: 3 / 4 !important;
+  }
+  #venue .venue-gallery-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  /* CUISINE: wide / portrait + portrait / wide */
+  #cuisine .cuisine-photos {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 4px !important;
+    width: 100% !important;
+  }
+  #cuisine .cuisine-photo {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #cuisine .cuisine-photo:nth-child(1),
+  #cuisine .cuisine-photo:nth-child(4) {
+    grid-column: 1 / -1 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+  #cuisine .cuisine-photo:nth-child(2),
+  #cuisine .cuisine-photo:nth-child(3) {
+    grid-column: auto !important;
+    aspect-ratio: 3 / 4 !important;
+  }
+  #cuisine .cuisine-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+  #cuisine .cuisine-photo:nth-child(2) img {
+    object-position: 54% 45% !important;
+  }
+
+  /* PHOTO WEDDING: wide / portrait + portrait / wide */
+  #photo .gallery-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 4px !important;
+    width: 100% !important;
+  }
+  #photo .gallery-item {
+    min-width: 0 !important;
+    overflow: hidden !important;
+  }
+  #photo .gallery-item.photo-wide {
+    grid-column: 1 / -1 !important;
+    aspect-ratio: 16 / 9 !important;
+  }
+  #photo .gallery-item:not(.photo-wide) {
+    grid-column: auto !important;
+    aspect-ratio: 3 / 4 !important;
+  }
+  #photo .gallery-item img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+}
+
+/* Do not collapse the portrait pairs on narrow iPhones */
+@media (max-width: 390px) {
+  #venue .venue-gallery,
+  #cuisine .cuisine-photos,
+  #photo .gallery-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  #venue .venue-gallery-item.venue-wide,
+  #cuisine .cuisine-photo:nth-child(1),
+  #cuisine .cuisine-photo:nth-child(4),
+  #photo .gallery-item.photo-wide {
+    grid-column: 1 / -1 !important;
+  }
+
+  #venue .venue-gallery-item.venue-portrait,
+  #cuisine .cuisine-photo:nth-child(2),
+  #cuisine .cuisine-photo:nth-child(3),
+  #photo .gallery-item:not(.photo-wide) {
+    grid-column: auto !important;
+  }
+}
+</style><style>
+/* =========================================================
+   FINAL TOP DISPLAY — compact mobile photo, no blur
+   ========================================================= */
+@media (max-width: 700px) {
+  .hero {
+    position: relative !important;
+    display: block !important;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    background: #171412 !important;
+  }
+
+  .hero-photo,
+  .hero-photo picture {
+    position: relative !important;
+    inset: auto !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    background: #171412 !important;
+  }
+
+  .hero-photo::before {
+    display: none !important;
+    content: none !important;
+  }
+
+  .hero-photo img {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .hero-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    display: block !important;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(18,15,13,0.10) 0%,
+        rgba(18,15,13,0.04) 38%,
+        rgba(18,15,13,0.52) 100%
+      ) !important;
+  }
+
+  .hero-content {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 6% !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    padding: 0 18px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    color: #fff !important;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 12px !important;
+  }
+
+  .hero-title {
+    margin-bottom: 16px !important;
+  }
+
+  .hero-sub {
+    margin-top: 0 !important;
+  }
+}
+</style><style>
+/* =========================================================
+   ORIGINAL-PHOTO MOBILE HERO — 9:16, full screen
+   ========================================================= */
+@media (max-width: 700px) {
+  .hero {
+    position: relative !important;
+    width: 100% !important;
+    height: 100svh !important;
+    min-height: 100svh !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    overflow: hidden !important;
+    background: #171412 !important;
+  }
+
+  .hero-photo,
+  .hero-photo picture {
+    position: absolute !important;
+    inset: 0 !important;
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .hero-photo::before,
+  .hero-photo::after {
+    display: none !important;
+    content: none !important;
+  }
+
+  .hero-photo img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+  }
+
+  .hero-overlay {
+    position: absolute !important;
+    inset: 0 !important;
+    z-index: 1 !important;
+    display: block !important;
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(12,10,9,0.18) 0%,
+        rgba(12,10,9,0.02) 40%,
+        rgba(12,10,9,0.58) 100%
+      ) !important;
+  }
+
+  .hero-content {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 5.5% !important;
+    z-index: 2 !important;
+    width: 100% !important;
+    padding: 0 18px !important;
+    margin: 0 !important;
+    background: transparent !important;
+    color: #fff !important;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px !important;
+    letter-spacing: 0.30em !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-title {
+    font-size: clamp(48px, 15vw, 70px) !important;
+    line-height: 1.04 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-rule {
+    margin-bottom: 14px !important;
+  }
+
+  .hero-sub {
+    font-size: 15px !important;
+    line-height: 1.9 !important;
+    margin: 0 !important;
+  }
+}
+</style><style>
+/* =========================================================
+   TOP REVISION — black title band + uncropped main photo
+   ========================================================= */
+.hero {
+  position: relative !important;
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100svh !important;
+  height: 100svh !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: #171412 !important;
+  overflow: hidden !important;
+}
+
+.hero-black-band {
+  position: relative !important;
+  order: 1 !important;
+  z-index: 2 !important;
+  width: 100% !important;
+  flex: 0 0 auto !important;
+  padding: 24px 20px 22px !important;
+  margin: 0 !important;
+  background: #171412 !important;
+  color: #fff !important;
+  text-align: center !important;
+}
+
+.hero-photo {
+  position: relative !important;
+  order: 2 !important;
+  inset: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+  background: #171412 !important;
+  overflow: hidden !important;
+}
+
+.hero-photo picture {
+  display: contents !important;
+}
+
+.hero-photo::before,
+.hero-photo::after {
+  display: none !important;
+  content: none !important;
+}
+
+.hero-photo img {
+  position: static !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+.hero-eyebrow {
+  margin: 0 0 8px !important;
+}
+
+.hero-title {
+  margin: 0 0 10px !important;
+}
+
+.hero-rule {
+  margin: 0 auto 10px !important;
+}
+
+.hero-sub {
+  margin: 0 !important;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    min-height: 100svh !important;
+    height: 100svh !important;
+  }
+
+  .hero-black-band {
+    padding: 18px 14px 16px !important;
+  }
+
+  .hero-eyebrow {
+    font-size: 9px !important;
+    letter-spacing: 0.26em !important;
+  }
+
+  .hero-title {
+    font-size: clamp(38px, 11vw, 54px) !important;
+    line-height: 1.05 !important;
+  }
+
+  .hero-sub {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+
+  .hero-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+}
+</style><style>
+/* Top heading position adjustment */
+.hero-black-band {
+  padding-top: 34px !important;
+}
+
+@media (max-width: 700px) {
+  .hero-black-band {
+    padding-top: 30px !important;
+  }
+}
+</style><style>
+/* =========================================================
+   FIX: keep the entire black title band below the fixed nav
+   ========================================================= */
+
+/* Desktop/tablet */
+.hero {
+  margin-top: 76px !important;
+  height: calc(100svh - 76px) !important;
+  min-height: calc(100svh - 76px) !important;
+}
+
+.hero-black-band {
+  padding-top: 28px !important;
+  padding-bottom: 24px !important;
+  overflow: visible !important;
+}
+
+.hero-title,
+.hero-eyebrow,
+.hero-rule,
+.hero-sub {
+  position: relative !important;
+  transform: none !important;
+  clip-path: none !important;
+  overflow: visible !important;
+}
+
+/* Smartphone */
+@media (max-width: 700px) {
+  nav {
+    height: 72px !important;
+    min-height: 72px !important;
+  }
+
+  .hero {
+    margin-top: 72px !important;
+    height: calc(100svh - 72px) !important;
+    min-height: calc(100svh - 72px) !important;
+  }
+
+  .hero-black-band {
+    flex: 0 0 auto !important;
+    padding: 24px 14px 20px !important;
+    min-height: 245px !important;
+    overflow: visible !important;
+  }
+
+  .hero-title {
+    font-size: clamp(36px, 10.5vw, 50px) !important;
+    line-height: 1.08 !important;
+    margin: 0 0 12px !important;
+    white-space: normal !important;
+  }
+
+  .hero-eyebrow {
+    margin-bottom: 10px !important;
+  }
+
+  .hero-rule {
+    margin-bottom: 12px !important;
+  }
+
+  .hero-sub {
+    margin: 0 !important;
+    padding-bottom: 2px !important;
+  }
+
+  .hero-photo {
+    min-height: 0 !important;
+  }
+}
+</style><style>
+/* =========================================================
+   TOP ORDER REVISION — photo first, black title band below
+   ========================================================= */
+
+.hero {
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+.hero-photo {
+  order: 1 !important;
+  flex: 1 1 auto !important;
+  min-height: 0 !important;
+}
+
+.hero-black-band {
+  order: 2 !important;
+  flex: 0 0 auto !important;
+  width: 100% !important;
+  margin: 0 !important;
+  background: #171412 !important;
+  color: #fff !important;
+  text-align: center !important;
+}
+
+/* Desktop / tablet */
+@media (min-width: 701px) {
+  .hero {
+    margin-top: 76px !important;
+    height: calc(100svh - 76px) !important;
+    min-height: calc(100svh - 76px) !important;
+  }
+
+  .hero-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .hero-black-band {
+    padding: 20px 24px 22px !important;
+  }
+}
+
+/* Smartphone-first */
+@media (max-width: 700px) {
+  .hero {
+    margin-top: 72px !important;
+    height: calc(100svh - 72px) !important;
+    min-height: calc(100svh - 72px) !important;
+  }
+
+  .hero-photo {
+    flex: 1 1 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #171412 !important;
+  }
+
+  .hero-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .hero-black-band {
+    min-height: 0 !important;
+    padding: 14px 14px 16px !important;
+  }
+
+  .hero-eyebrow {
+    margin: 0 0 5px !important;
+    font-size: 8px !important;
+    letter-spacing: 0.24em !important;
+  }
+
+  .hero-title {
+    margin: 0 0 6px !important;
+    font-size: clamp(30px, 9vw, 42px) !important;
+    line-height: 1.02 !important;
+  }
+
+  .hero-rule {
+    margin: 0 auto 6px !important;
+  }
+
+  .hero-sub {
+    margin: 0 !important;
+    font-size: 11px !important;
+    line-height: 1.5 !important;
+  }
+}
+</style><style>
+/* =========================================================
+   FINAL TOP STRUCTURE
+   1st screen: photo only
+   2nd section: independent black title band
+   ========================================================= */
+
+.hero {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100vh !important;
+  min-height: 100vh !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #171412 !important;
+}
+
+.hero-photo {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: #171412 !important;
+}
+
+.hero-photo picture {
+  display: contents !important;
+}
+
+.hero-photo::before,
+.hero-photo::after,
+.hero-overlay {
+  display: none !important;
+  content: none !important;
+}
+
+.hero-photo img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+.hero-copy-band {
+  width: 100%;
+  margin: 0;
+  padding: 64px 24px 68px;
+  background: #171412;
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content-in-band {
+  position: static !important;
+  width: min(100%, 720px) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  background: transparent !important;
+  color: #fff !important;
+}
+
+.hero-content-in-band .hero-eyebrow {
+  margin: 0 0 14px !important;
+}
+
+.hero-content-in-band .hero-title {
+  margin: 0 0 16px !important;
+}
+
+.hero-content-in-band .hero-rule {
+  margin: 0 auto 16px !important;
+}
+
+.hero-content-in-band .hero-sub {
+  margin: 0 !important;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    height: 100svh !important;
+    min-height: 100svh !important;
+  }
+
+  .hero-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .hero-copy-band {
+    padding: 46px 18px 50px !important;
+  }
+
+  .hero-content-in-band .hero-eyebrow {
+    font-size: 9px !important;
+    letter-spacing: 0.26em !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-content-in-band .hero-title {
+    font-size: clamp(38px, 11vw, 54px) !important;
+    line-height: 1.08 !important;
+    margin-bottom: 12px !important;
+  }
+
+  .hero-content-in-band .hero-rule {
+    margin-bottom: 12px !important;
+  }
+
+  .hero-content-in-band .hero-sub {
+    font-size: 13px !important;
+    line-height: 1.75 !important;
+  }
+}
+</style><style>
+/* =========================================================
+   AUGUST UPDATE — MOBILE-FIRST
+   ========================================================= */
+.nav-links {
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  white-space: nowrap !important;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a { flex: 0 0 auto; }
+
+@media (max-width: 700px) {
+  /* Keep the main photo prominent, while showing 八一Wedding
+     immediately beneath it in the first viewport. */
+  .hero {
+    margin-top: 72px !important;
+    height: 64svh !important;
+    min-height: 64svh !important;
+  }
+
+  .hero-photo img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+  }
+
+  .hero-copy-band {
+    padding: 26px 16px 32px !important;
+  }
+
+  .hero-content-in-band .hero-title {
+    margin-bottom: 12px !important;
+  }
+
+  .hero-content-in-band .hero-sub {
+    font-size: 12px !important;
+    line-height: 1.75 !important;
+  }
+
+  #photo .gallery-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  }
+
+  #photo .gallery-item.photo-wide {
+    grid-column: 1 / -1 !important;
+  }
+}
+</style><style>
+@media (max-width:700px){
+.hero-sub br{display:block}
+}
+</style><style id="top-firstview-final">
+@media (max-width:700px){
+  .hero{
+    margin-top:72px !important;
+    height:48svh !important;
+    min-height:48svh !important;
+  }
+
+  .hero-photo img{
+    width:100% !important;
+    height:100% !important;
+    object-fit:cover !important;
+    object-position:center 58% !important;
+  }
+
+  .hero-copy-band{
+    padding:22px 16px 24px !important;
+  }
+
+  .hero-content-in-band .hero-eyebrow{
+    margin-bottom:6px !important;
+    font-size:8px !important;
+    letter-spacing:.22em !important;
+  }
+
+  .hero-content-in-band .hero-title{
+    margin-bottom:8px !important;
+    font-size:clamp(34px,10vw,44px) !important;
+    line-height:1.04 !important;
+  }
+
+  .hero-content-in-band .hero-rule{
+    margin-bottom:8px !important;
+  }
+
+  .hero-content-in-band .hero-sub{
+    font-size:11px !important;
+    line-height:1.55 !important;
+    letter-spacing:.02em !important;
+  }
+}
+</style></head>
+<body>
+<!-- NAV -->
+<nav>
+<a class="nav-logo" href="#">八一Wedding</a>
+<ul class="nav-links"><a href="#concept">コンセプト</a><a href="#venue">会場</a><a href="#cuisine">料理</a><a href="#photo">フォト</a><a href="#shrines">挙式</a><a href="#voice">お客様の声</a><a href="#contact">お問い合わせ</a><a href="#plans">プラン</a><a href="#flow">スケジュール例</a><a href="#sns">SNS</a><a href="#faq">よくある質問</a><a href="#access">アクセス</a></ul>
+</nav>
+<!-- HERO -->
+<section class="hero" id="top">
+<div class="hero-photo"><img alt="八一の店先に並ぶ新郎新婦とご家族" src="images/top_main.jpg"/></div>
+</section><section class="hero-copy-band" id="hero-copy"><div class="hero-content hero-content-in-band">
+<p class="hero-eyebrow">FUJISAWA・KOMINKA WEDDING</p>
+<h1 class="hero-title">八一Wedding</h1>
+<div class="hero-rule"></div>
+<p class="hero-sub">湘南・藤沢に佇む　築97年の古民家レストラン　八一<br/>心あたたまる古民家ウエディング<br/>少人数の結婚式や会食、<br/>フォトウエディングもご提案しております</p>
+</div></section>
+<!-- 1. CONCEPT -->
+<section id="concept">
+<div class="inner">
+<div class="concept-grid">
+<div class="fade-in">
+<div class="section-label">
+<span class="section-label-text">CONCEPT</span>
+<span class="section-label-line"></span>
+</div>
+<h2 class="section-title">かけがえない一日を、<br class="sp-only"/>古民家の佇まいの中で。</h2>
+<p class="section-body">藤沢市にある築97年の古民家<br class="sp-only"/>「甘味とごはんや八一」。<br class="sp-only"/>その空間を舞台に生まれた、<br class="sp-only"/>少人数制のウエディングです。<br class="sp-only"/><br class="sp-only"/>「盛大にやらなくてもいい」<br class="sp-only"/>「身近な人とだけ過ごしたい」<br class="sp-only"/>——そんな気持ちに寄り添うスタイルを<br class="sp-only"/>大切にしています。<br class="sp-only"/><br class="sp-only"/>フォトウエディングのみでも、<br class="sp-only"/>家族を呼んだ会食でも、<br class="sp-only"/>ふたりだけの挙式でも。<br class="sp-only"/>あなたたちの形に合ったウエディングを、<br class="sp-only"/>一緒に作ります。</p>
+</div>
+<div class="concept-photo-wrap fade-in"><img alt="八一の店先でご家族と並ぶ新郎新婦" loading="lazy" src="images/109.jpg"/></div>
+</div>
+</div>
+</section>
+<!-- 2. VENUE（会場紹介） -->
+<section id="venue">
+<div class="inner">
+<div class="section-label fade-in">
+<span class="section-label-text">VENUE</span>
+<span class="section-label-line"></span>
+</div>
+<h2 class="section-title fade-in">歴史ある古民家が、<br class="sp-only"/>特別な日の舞台に。</h2>
+<p class="section-body fade-in">一日一組、築97年の古民家を貸切にして、おふたりと大切な方だけの時間をお過ごしいただけます。<br/><br/>昭和初期に建てられたこの古民家は、藤沢の街の記憶を静かに宿し続けています。梁の質感、障子から差し込む光、年月を重ねた木の温もり。どこを切り取っても絵になる空間が、ウエディングの舞台としての顔を持ちました。<br/><br/><strong>最大32名まで着席可能。</strong><br/>ご家族や親しい友人との少人数の会食から、ある程度の人数でのお披露目まで、幅広くご対応しています。</p>
+<!-- 写真：全体図メイン→サブ4枚 -->
+<div class="venue-gallery fade-in" style="margin-top:48px;"><div class="venue-gallery-item venue-wide"><img alt="歴史ある古民家の会食会場" loading="lazy" src="images/003.jpg"/></div><div class="venue-gallery-item venue-portrait"><img alt="テーブルコーディネートの縦写真" loading="lazy" src="images/007.jpg"/></div><div class="venue-gallery-item venue-portrait"><img alt="八一の建物外観の縦写真" loading="lazy" src="images/073.jpg"/></div><div class="venue-gallery-item venue-wide"><img alt="古民家の室内に立つ和装の新郎新婦" loading="lazy" src="images/044.jpg"/></div></div>
+</div>
+</section>
+<!-- 3. CUISINE（料理紹介） -->
+<section id="cuisine">
+<div class="inner">
+<div class="cuisine-inner">
+<div class="fade-in">
+<div class="section-label">
+<span class="section-label-text">CUISINE</span>
+<span class="section-label-line"></span>
+</div>
+<h2 class="section-title">自慢の料理</h2>
+<p class="section-body">八一の大元は、藤沢の老舗焼肉屋「ヨンドン」。<br class="sp-only"/>自社で精肉店も経営しているため、素材の選定から調理まで一貫したこだわりを持っています。<br class="sp-only"/>その確かな目利きが生む、質の高いお肉料理をはじめとした料理の数々。<br class="sp-only"/>ウエディングコースのメニューは、お客様のご要望に合わせてプランナーと一緒にご相談・カスタマイズが可能です。<br class="sp-only"/>大切な日のテーブルを、特別な一皿で飾ります。</p>
+</div>
+<div class="cuisine-photos fade-in">
+<div class="cuisine-photo" style="grid-column: 1 / 3; aspect-ratio: 4/3;">
+<img alt="彩り豊かなすき焼き" loading="lazy" src="images/187.jpg"/>
+</div>
+<div class="cuisine-photo">
+<img alt="古民家で料理を仕上げる料理人" loading="lazy" src="images/177.jpg"/>
+</div>
+<div class="cuisine-photo">
+<img alt="季節の野菜" loading="lazy" src="images/291.jpg"/>
+</div>
+<div class="cuisine-photo" style="grid-column: 1 / 3; aspect-ratio: 16/9;">
+<img alt="新鮮な刺身の盛り合わせ" loading="lazy" src="images/183.jpg"/>
+</div>
+</div>
+</div>
+</div>
+</section><section id="photo">
+<div class="inner">
+<div class="section-label fade-in">
+<span class="section-label-text">PHOTO WEDDING</span>
+<span class="section-label-line"></span>
+</div>
+<h2 class="section-title fade-in">おふたりに合った<br class="sp-only"/>フォトウエディング</h2>
+<p class="section-body fade-in">築97年の古民家が持つ唯一無二の空気感の中で、おふたりの大切な一瞬を写真に残します。<br class="sp-only"/>白無垢・紋付袴の和装はもちろん、ウエディングドレスやカラードレス、スーツスタイルなど、どんな衣装もこの空間に溶け込みます。<br class="sp-only"/>撮影は古民家の中だけではありません。<br class="sp-only"/>湘南の海岸やビーチ、緑豊かなガーデンなど、おふたりのイメージに合ったロケーションでも対応可能。<br class="sp-only"/>どこで撮っても、ふたりらしい写真が残ります。<br class="sp-only"/>「写真だけでいい」というおふたりも大歓迎。<br class="sp-only"/>撮影後にご家族を呼んで食事、という組み合わせも人気です。</p>
+<!-- 写真：海・空・ガーデン等の屋外ロケ＋古民家 -->
+<div class="gallery-grid fade-in" style="margin-top:48px;"><div class="gallery-item photo-wide"><img alt="八一の店先に立つ和装の新郎新婦" loading="lazy" src="images/035.jpg"/></div><div class="gallery-item"><img alt="緑豊かな公園でのフォトウエディング" loading="lazy" src="images/143.jpg"/></div><div class="gallery-item"><img alt="古民家の廊下で撮影する新郎新婦" loading="lazy" src="images/097.jpg"/></div><div class="gallery-item photo-wide"><img alt="江の島を望む海辺でのフォトウエディング" loading="lazy" src="images/094.jpg"/></div><div class="gallery-item photo-wide"><img alt="緑の小道を手をつないで歩く新郎新婦" loading="lazy" src="images/photo_add.jpg"/></div></div>
+</div>
+</section>
+<!-- 5. CEREMONY（挙式案内） -->
+<section id="shrines">
+<div class="inner">
+<div class="section-label fade-in">
+<span class="section-label-text">CEREMONY</span>
+<span class="section-label-line"></span>
+</div>
+<h2 class="section-title fade-in">挙式も、<br class="sp-only"/>ふたりらしく。</h2>
+<p class="section-body fade-in">古民家での撮影・会食と組み合わせて、挙式も行うことができます。<br class="sp-only"/>神社・ガーデン・ビーチなど、おふたりのイメージに合わせてご提案いたします。<br class="sp-only"/>プランナーが会場との調整から当日まで一貫してサポートします。</p>
+<div class="shrine-list">
+<div class="shrine-item fade-in"><div class="shrine-item-photo"><img alt="神社での挙式" loading="lazy" src="images/02.jpg"/></div>
+<div>
+<p class="shrine-name">神社</p>
+<p class="shrine-note">凛とした神前式。和装との相性も良く、<br class="sp-only"/>藤沢エリアの鵠沼伏見稲荷神社・江島神社・皇大神宮、<br class="sp-only"/>鎌倉エリアの鶴岡八幡宮・御霊神社などをご案内可能です。</p>
+</div>
+</div>
+<div class="shrine-item fade-in"><div class="shrine-item-photo"><img alt="ガーデンでの挙式" loading="lazy" src="images/05.jpg"/></div>
+<div>
+<p class="shrine-name">ガーデン</p>
+<p class="shrine-note">緑に囲まれた開放的な空間で、ナチュラルで温かみのある挙式を。<br class="sp-only"/>ドレス・スーツ姿が映えます。</p>
+</div>
+</div>
+<div class="shrine-item fade-in"><div class="shrine-item-photo"><img alt="夕景の海辺で寄り添う新郎新婦" loading="lazy" src="images/0146.jpg"/></div>
+<div>
+<p class="shrine-name">ビーチ</p>
+<p class="shrine-note">湘南の海を舞台に、開放感あふれるビーチセレモニーを。<br class="sp-only"/>夕暮れ時の撮影も人気です。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. VOICE（お客様の声） -->
+<section id="voice">
+<div class="inner-wide">
+<div class="section-label fade-in">
+<span class="section-label-text">VOICE</span>
+<span class="section-label-line"></span>
+</div>
+<h2 class="section-title fade-in">お客様からの声</h2>
+<div class="voice-cards">
+<div class="voice-card fade-in">
+<p class="voice-text">結婚式はしなくていいと思っていたのに、気づいたら最高の一日になっていました。<br class="sp-only"/>古民家の雰囲気が最高で、家族みんなが喜んでくれました。</p>
+<p class="voice-name">30代ご夫婦 / 会食＋フォトプラン</p>
+</div>
+<div class="voice-card fade-in">
+<p class="voice-text">プランナーさんが本当に親身で、細かいことまで全部相談にのってくれました。<br class="sp-only"/>料理もおいしすぎて、ゲストからも大好評でした！</p>
+<p class="voice-name">20代ご夫婦 / 会食プラン</p>
+</div>
+<div class="voice-card fade-in">
+<p class="voice-text">フォトウエディングだけのつもりが、撮影しながらとても楽しくて。<br class="sp-only"/>写真も想像以上に素敵な仕上がりで大満足です。</p>
+<p class="voice-name">30代ご夫婦 / フォトウエディング</p>
+</div>
+</div>
+</div>
+</section>
+<!-- 7. CONTACT CTA -->
+<section id="contact">
+<div class="inner">
+<div class="section-label fade-in" style="justify-content:center;">
+<span class="section-label-line" style="max-width:80px;"></span>
+<span class="section-label-text">CONTACT</span>
+<span class="section-label-line" style="max-width:80px;"></span>
+</div>
+<h2 class="cta-title fade-in">まずは、<br class="sp-only"/>見学からどうぞ。</h2>
+<p class="cta-sub fade-in">初めての見学の方も、まだ何も決まっていない方も大歓迎です。<br class="sp-only"/>結婚式・フォトウエディング・ご家族でのお食事など、<br class="sp-only"/>おふたりのご希望を伺いながらご提案いたします。<br class="sp-only"/>まずはお気軽にご相談ください。</p>
+<div class="cta-buttons fade-in">
+<a class="btn-line" href="https://lin.ee/T9GEqTP" rel="noopener" target="_blank">見学予約・問い合わせ はこちら</a>
+</div>
+</div>
+</section>
+<!-- 8. PLANS -->
+<section id="plans">
+<div class="inner-wide">
+<div class="section-label fade-in">
+<span class="section-label-text">PLANS</span>
+<span class="section-label-line"></span>
+</div>
+<h2 class="section-title fade-in">お選びいただけるプラン</h2>
+<div class="plan-cards">
+<div class="plan-card fade-in">
+<p class="plan-num">01 / PHOTO</p>
+<h3 class="plan-name">フォトウエディング</h3>
+<p class="plan-price">120,000<span>円</span></p>
+<p class="plan-desc">古民家はもちろん、湘南のビーチや海岸、ガーデンなど古民家以外の場所での撮影も可能です。<br class="sp-only"/>挙式をプラスすることもできます。</p>
+<div class="plan-includes">
+<p class="plan-includes-title">INCLUDES</p>
+<ul class="plan-includes-list">
+<li>写真撮影（カメラマン）</li>
+<li>ヘアセット＆メイク</li>
+<li>着付け</li>
+<li>当日進行案内</li>
+<li>各種打合せ</li>
+<li>ウエディングスタッフサポート料</li>
+</ul>
+</div>
+</div>
+<div class="plan-card fade-in">
+<p class="plan-num">02 / FAMILY</p>
+<h3 class="plan-name">会食プラン<span style="font-size:12px;color:#8B6F52;margin-left:8px;">10名</span></h3>
+<p class="plan-price">279,400<span>円</span></p>
+<p class="plan-desc">ご家族や親しい方と囲む、とっておきの食事会。</p>
+<div class="plan-includes">
+<p class="plan-includes-title">INCLUDES</p>
+<ul class="plan-includes-list">
+<li>料理・飲物</li>
+<li>写真撮影（カメラマン）</li>
+<li>ヘアセット＆メイク</li>
+<li>着付け</li>
+<li>会場貸切・会場使用料</li>
+<li>当日進行案内</li>
+<li>各種打合せ</li>
+<li>ウエディングスタッフサポート料</li>
+</ul>
+</div>
+</div>
+<div class="plan-card plan-card--recommend fade-in">
+<span class="recommend-badge">おすすめ</span>
+<p class="plan-num" style="color:var(--moss); margin-top:6px;">03 / COMBO</p>
+<h3 class="plan-name">フォトウエディング＋会食</h3>
+<p class="plan-price">328,900<span>円</span></p>
+<p class="plan-desc">撮影後にそのままご家族との食事へ。<br class="sp-only"/>最も人気のセットプランです。<br class="sp-only"/>挙式をプラスすることも可能です。</p>
+<div class="plan-includes">
+<p class="plan-includes-title">INCLUDES</p>
+<ul class="plan-includes-list">
+<li>フォトウエディング全内容</li>
+<li>会食プラン全内容</li>
+<li>別々ご利用よりお得な価格</li>
+</ul>
+</div>
+</div>
+<div class="plan-card fade-in">
+<p class="plan-num">04 / CEREMONY</p>
+<h3 class="plan-name">フォト＋挙式プラン</h3>
+<p class="plan-price">150,000<span>円〜</span></p>
+<p class="plan-desc">ふたりだけで写真を撮って、挙式も。<br class="sp-only"/>神社・ガーデン・ビーチなど挙式場所により料金が変動します。</p>
+<div class="plan-includes">
+<p class="plan-includes-title">INCLUDES</p>
+<ul class="plan-includes-list">
+<li>写真撮影（カメラマン）</li>
+<li>ヘアセット＆メイク</li>
+<li>着付け</li>
+<li>挙式プロデュース料</li>
+<li>当日進行案内</li>
+<li>各種打合せ</li>
+<li>ウエディングスタッフサポート料</li>
+</ul>
+</div>
+</div>
+<div class="plan-card fade-in">
+<p class="plan-num">05 / MEETING</p>
+<h3 class="plan-name">顔合わせお食事プラン<span style="font-size:12px;color:#8B6F52;margin-left:8px;">6名</span></h3>
+<p class="plan-price">116,160<span>円</span></p>
+<p class="plan-desc">両家の顔合わせに最適なお食事プラン。<br class="sp-only"/>フォトウエディングとの組み合わせも可能です。</p>
+<div class="plan-includes">
+<p class="plan-includes-title">INCLUDES</p>
+<ul class="plan-includes-list">
+<li>料理・飲物</li>
+<li>会場使用料</li>
+<li>各種打合せサポート</li>
+</ul>
+</div>
+</div>
+</div>
+<p class="plan-note fade-in">※ 価格は全て税込表示です。<br class="sp-only"/>※ 全プランとも衣装は別途となります。<br class="sp-only"/>提携衣装店4店舗をご紹介可能です（カジュアルドレスレンタル 30,000円〜）。</p>
+</div>
+</section>
+<!-- 9. FLOW + SCHEDULE -->
+<section id="flow">
+<div class="inner">
+<div class="section-label fade-in">
+<span class="section-label-text">FLOW &amp; SCHEDULE</span>
+<span class="section-label-line"></span>
+</div>
+<h2 class="section-title fade-in">ご相談から<br class="sp-only"/>当日まで</h2>
+<p class="section-body fade-in">専属のウエディングプランナーが、見学・打合せ・当日まで全てサポートします。</p>
+<div class="flow-steps">
+<div class="flow-step fade-in">
+<div class="flow-idx">一</div>
+<div>
+<p class="flow-step-title">お問い合わせ・会場見学</p>
+<p class="flow-step-text">まずはお気軽にお問い合わせください。<br class="sp-only"/>実際に古民家の雰囲気を体感していただける見学会を随時開催しています。</p>
+</div>
+</div>
+<div class="flow-step fade-in">
+<div class="flow-idx">二</div>
+<div>
+<p class="flow-step-title">プランのご提案・打合せ</p>
+<p class="flow-step-text">おふたりのご要望をお聞きし、衣装・装花・料理・進行など、必要なものを全てご提案。<br class="sp-only"/>オリジナルプランを一緒に作ります。</p>
+</div>
+</div>
+<div class="flow-step fade-in">
+<div class="flow-idx">三</div>
+<div>
+<p class="flow-step-title">準備・最終確認</p>
+<p class="flow-step-text">細部の確認と調整を丁寧に行います。<br class="sp-only"/>ご不明な点はいつでもご相談ください。</p>
+</div>
+</div>
+<div class="flow-step fade-in">
+<div class="flow-idx">四</div>
+<div>
+<p class="flow-step-title">当日</p>
+<p class="flow-step-text">プランナーが当日も同行。<br class="sp-only"/>おふたりとご家族が心から楽しめるよう、細やかなサポートで当日を支えます。</p>
+</div>
+</div>
+</div>
+<!-- 当日のスケジュール例 -->
+<div style="margin-top:64px;">
+<h3 class="section-title fade-in schedule-title" style="font-family:'Noto Serif JP',serif; font-weight:300; font-size:clamp(22px,3vw,30px); letter-spacing:0.12em; line-height:1.5; margin-bottom:8px; color:var(--ink);">当日の<br class="sp-only"/>スケジュール例</h3>
+<p style="font-size:12px; color:var(--wood); letter-spacing:0.1em; margin-bottom:0;">会食＋フォトプランの場合</p>
+<div class="schedule-list">
+<div class="schedule-item fade-in">
+<div class="schedule-time">9:00</div>
+<div>
+<p class="schedule-content-title">ヘアメイク・着付け</p>
+<p class="schedule-content-text">プランナー・ヘアメイクスタッフがお迎えします。リラックスしてお任せください。</p>
+</div>
+</div>
+<div class="schedule-item fade-in">
+<div class="schedule-time">11:00</div>
+<div>
+<p class="schedule-content-title">フォトウエディング撮影</p>
+<p class="schedule-content-text">古民家の内外でおふたりの写真を撮影。自然体の表情を大切にします。</p>
+</div>
+</div>
+<div class="schedule-item fade-in">
+<div class="schedule-time">12:00</div>
+<div>
+<p class="schedule-content-title">ご家族・ゲストのご来場、写真タイム</p>
+<p class="schedule-content-text">ゲストをお迎えし、おふたりと一緒に記念写真を。会場の雰囲気を楽しみながら、和やかなひとときをお過ごしください。</p>
+</div>
+</div>
+<div class="schedule-item fade-in">
+<div class="schedule-time">12:30</div>
+<div>
+<p class="schedule-content-title">食事スタート</p>
+<p class="schedule-content-text">乾杯からはじまる温かな食事会。ケーキカットなどの演出やイベントを行いたい方はご相談ください。</p>
+</div>
+</div>
+<div class="schedule-item fade-in">
+<div class="schedule-time">15:00</div>
+<div>
+<p class="schedule-content-title">お開き・お見送り</p>
+<p class="schedule-content-text">スタッフが撤収まで対応します。おふたりはそのままゆっくりお過ごしください。</p>
+</div>
+</div>
+</div>
+<p style="font-size:11px; color:var(--wood); margin-top:16px; letter-spacing:0.05em;">※ スケジュールはプランや人数により異なります。詳細はご相談時にご案内します。</p>
+</div>
+</div>
+</section>
+<!-- 10. SNS -->
+<section id="sns">
+<div class="inner">
+<div class="section-label fade-in" style="justify-content:center;">
+<span class="section-label-line" style="max-width:80px;"></span>
+<span class="section-label-text">SNS</span>
+<span class="section-label-line" style="max-width:80px;"></span>
+</div>
+<h2 class="section-title fade-in">SNSでも<br class="sp-only"/>配信中</h2>
+<p class="section-body fade-in" style="text-align:center;">最新の撮影事例やスケジュール、<br class="sp-only"/>お知らせをSNSで配信しています。<br class="sp-only"/>ぜひフォローしてご覧ください。</p>
+<div class="sns-buttons fade-in">
+<a class="sns-btn" href="https://www.instagram.com/fujisawa_yaichi_wedding?igsh=aWQzb2IzdGMxano3&amp;utm_source=qr" rel="noopener" target="_blank">
+        Instagram
+      </a>
+<a class="sns-btn" href="https://www.tiktok.com/@yaichi_wedding" rel="noopener" target="_blank">
+        TikTok
+      </a>
+</div>
+</div>
+</section>
+<!-- 11. FAQ -->
+<section id="faq">
+<div class="inner">
+<div class="section-label fade-in">
+<span class="section-label-text">FAQ</span>
+<span class="section-label-line"></span>
+</div>
+<h2 class="section-title fade-in">よくある質問</h2>
+<!-- 見学について -->
+<div class="faq-category fade-in">見学について</div>
+<div class="faq-list fade-in">
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">見学はできますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">はい、可能です。<br class="sp-only"/>通常はレストランとして営業しているため、結婚式当日のイメージがしづらい部分は、お写真や動画をご覧いただきながらご紹介いたします。<br class="sp-only"/>プランナーが当日の流れや会場の使い方も丁寧にご案内します。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">見学は無料ですか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">はい、見学は無料です。<br class="sp-only"/>完全予約制となっておりますので、ご希望日時を公式LINEよりご相談ください。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">ふたりで見学に行っていいですか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">おふたりでのご来場を歓迎しておりますが、おひとりでのご見学も大丈夫です。<br class="sp-only"/>ご両親やご家族とご一緒のご来場も可能です。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">見学から式当日までどのくらいの期間が必要ですか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">ご予約は、式当日の1年前〜半年前頃がおすすめです。<br class="sp-only"/>人気の日程やお日柄は早めに埋まることがあるため、ご希望がある場合はお早めにご相談ください。<br class="sp-only"/>少人数ウエディングのため、準備期間は最短2か月からご案内可能です。</p></div>
+</div>
+</div>
+<!-- プランについて -->
+<div class="faq-category fade-in">プランについて</div>
+<div class="faq-list fade-in">
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">フォトウエディングだけでも大丈夫ですか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">もちろんです。<br class="sp-only"/>写真撮影のみのフォトウエディングプランもご用意しています。<br class="sp-only"/>「記念に写真だけ残したい」というおふたりを大歓迎しています。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">プランのカスタマイズはできますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">はい、おふたりのご要望に合わせてプランをカスタマイズできます。<br class="sp-only"/>プランナーが一緒に考えますので、まずはご希望をお聞かせください。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">挙式だけでも対応できますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">はい、可能です。<br class="sp-only"/>挙式のみの専用プランのご用意はございませんが、ご希望に合わせてご提案いたしますので、ぜひご相談ください。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">追加オプションはありますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">結婚式や披露宴（会食）に必要なものや、あったらいいものについては、すべてこちらでご用意が可能です。<br class="sp-only"/>おふたりのご希望やご予算に合わせてご提案しますので、ぜひプランナーにご相談ください。</p></div>
+</div>
+</div>
+<!-- 会食について -->
+<div class="faq-category fade-in">会食について</div>
+<div class="faq-list fade-in">
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">何名から会食をお願いできますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">新郎新婦おふたりから、最大32名まで着席可能です。<br class="sp-only"/>人数に合わせてプランをご提案しますのでお気軽にご相談ください。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">料理のアレルギーや食の制限は対応できますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">はい、アレルギーや食の制限についても事前にご相談いただければ対応可能です。<br class="sp-only"/>メニューのカスタマイズもプランナーと一緒にご相談ください。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">飲み物はどのようなものがありますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">ビール・焼酎・ウイスキー・ワイン・ソフトドリンクのほか、八一ならではのドリンクもご用意しております。<br class="sp-only"/>お料理と一緒に楽しんでいただける内容をご提案しますので、ご希望がございましたらお気軽にご相談ください。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">会場の貸切時間はどのくらいですか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">プランにより異なりますが、準備・セッティングから撤収までをサポートしています。<br class="sp-only"/>詳細はプランナーにご確認ください。</p></div>
+</div>
+</div>
+<!-- アイテム・衣装について -->
+<div class="faq-category fade-in">アイテム・衣装について</div>
+<div class="faq-list fade-in">
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">衣装はどうすればいいですか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">提携衣装店を4店舗ご紹介可能です。<br class="sp-only"/>和装・ドレスなど、おふたりのご希望やイメージに合わせてご案内いたします。<br class="sp-only"/>ご自身で用意された衣装のお持ち込みも可能です。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">自分で用意した衣装を持ち込むことはできますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">はい、お持ち込み可能です。<br class="sp-only"/>着付けやヘアメイクとの兼ね合いもありますので、事前にご相談ください。</p></div>
+</div><div class="faq-item fade-in"><div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">衣装やアイテムの持ち込みはできますか？</span><span class="faq-arrow">▼</span></div><div class="faq-answer"><p class="faq-a-text">はい、お持ち込みは自由です。<br class="sp-only"/>衣装・アクセサリー・ブーケ・ペーパーアイテムなど、必要なアイテムはすべてこちらでご用意できますが、ご希望のものをご自身でお持ち込みいただくことも可能です。<br class="sp-only"/>内容によって確認事項がある場合がありますので、事前にご相談ください。</p></div></div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">ブーケや装花はどうすればいいですか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">提携の装花スタッフよりご提案が可能です。<br class="sp-only"/>ご予算やイメージに合わせてご相談ください。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">写真データはもらえますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">はい、撮影データはお渡しします。<br class="sp-only"/>枚数や納品方法についてはプランナーにご確認ください。</p></div>
+</div>
+</div>
+<!-- 挙式・その他について -->
+<div class="faq-category fade-in">挙式・その他について</div>
+<div class="faq-list fade-in">
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">挙式はどこで行いますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">神社・ガーデン・ビーチなど、おふたりのご希望に合わせてご提案します。<br class="sp-only"/>藤沢エリアの鵠沼伏見稲荷神社・江島神社・皇大神宮、鎌倉エリアの鶴岡八幡宮・御霊神社などもご案内可能です。<br class="sp-only"/>プランナーが会場との調整から当日までサポートします。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">雨天の場合はどうなりますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">屋外での撮影や挙式を予定している場合は、天候に応じて屋内プランへの変更や日程調整をご相談しながら対応します。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">駐車場はありますか？</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">会場専用の駐車場はございません。<br class="sp-only"/>近隣のコインパーキングをご利用ください。<br class="sp-only"/>藤沢駅北口より徒歩5分とアクセスも良好です。</p></div>
+</div>
+<div class="faq-item">
+<div class="faq-question"><span class="faq-q-mark">Q</span><span class="faq-q-text">お支払い方法を教えてください。</span><span class="faq-arrow">▼</span></div>
+<div class="faq-answer"><p class="faq-a-text">お申込みから1週間以内に、前金をお支払いいただきます。<br class="sp-only"/>その後、ウエディングの3日前までに残金をお支払いいただいております。</p></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 12. ACCESS -->
+<section id="access">
+<div class="inner">
+<div class="section-label fade-in">
+<span class="section-label-text">ACCESS</span>
+<span class="section-label-line"></span>
+</div>
+<div class="access-grid">
+<div class="access-map fade-in">
+<iframe allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3252.8!2d139.4909!3d35.3392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60184f4f1a5e2c4d%3A0x0!2z56ys5bed5biC56ys5bed6LKD77yY77yZ77yA77yR!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp" title="八一Wedding アクセスマップ">
+</iframe>
+</div>
+<div class="access-info fade-in">
+<p class="access-name">甘味とごはんや八一</p>
+<p class="access-venue-sub">八一Wedding 会場</p>
+<div class="access-detail">
+<p><strong>住所</strong><br/>〒251-0052<br/>神奈川県藤沢市藤沢630-1</p>
+<br/>
+<p><strong>アクセス</strong><br/>JR・小田急・江ノ島電鉄<br/>藤沢駅北口より徒歩5分</p>
+<br/>
+<p><strong>見学・ご相談</strong><br/>完全予約制です。公式LINEよりお気軽にご連絡ください。</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer>
+<p style="font-family:'Shippori Mincho',serif; font-size:14px; color:rgba(247,243,238,0.7); letter-spacing:0.15em; margin-bottom:16px;">八一Wedding</p>
+<p>〒251-0052 神奈川県藤沢市藤沢630-1　藤沢駅北口徒歩5分</p>
+<br/>
+<p><strong>店舗営業時間</strong>　平日 11:00〜17:00（変更になる場合があります）</p>
+<p><strong></strong></p>
+<p style="margin-top:4px;">最新スケジュールはInstagram・TikTokにてご確認ください。</p>
+<br/>
+<p>© 2024 八一Wedding. All rights reserved.</p>
+</footer>
+<script>
+  // Fade in
+  const targets = document.querySelectorAll('.fade-in');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  targets.forEach(t => io.observe(t));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      item.classList.toggle('open');
+    });
+  });
+</script>
+</body>
+</html>
